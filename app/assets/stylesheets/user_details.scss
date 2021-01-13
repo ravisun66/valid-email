@@ -1,0 +1,19 @@
+// Place all the styles related to the user_details controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+table { 
+	width: 750px; 
+	border-collapse: collapse; 
+	margin:50px auto;
+	}
+
+th { 
+	font-weight: bold; 
+	}
+
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+	}

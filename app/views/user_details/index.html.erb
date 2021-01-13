@@ -1,0 +1,42 @@
+<center class="parent-class">
+  <%= form_with model: @user_detail do |form| %>
+    <div class="first-row">
+        <%= form.text_field :first_name, placeholder: "first name" %>
+        <%= form.text_field :last_name, placeholder: "last name" %>
+        <%= form.text_field :url, placeholder: "url" %>
+        <%= form.submit 'Search' %>
+    </div>
+  <% end %>
+
+  <div class="second-row">
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-info">
+        <%= msg %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="third-row">
+    <p>Valid emails</p>
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>URL</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @valid_emails.each do |valid_email| %>
+          <tr>
+            <td data-column="First Name"><%= valid_email.user_detail.first_name %></td>
+            <td data-column="Last Name"><%= valid_email.user_detail.last_name %></td>
+            <td data-column="URL"><%= valid_email.user_detail.url %></td>
+            <td data-column="Email"><%= valid_email.email %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</center>
